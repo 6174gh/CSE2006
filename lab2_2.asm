@@ -1,15 +1,17 @@
 data segment
-    array dw 0005H, 5050H, F001H, 1010H
+array db 05h, 61h, 0Fh, 10h, 23h
 data ends
-
 code segment
-assume cs:code ds:datastart
+assume cs:code,ds:data
 start:
-    mov ax,data
-    mov ds,ax
-    mov cl,05H
-    mov ax,0000H
-    RPT: add ax,array
-    INC SI
-    INC SI
-    LOOP RPT
+mov ax, data
+mov ds, ax
+rpt: add al,array[si]
+inc si
+loop rpt
+mov ax, al
+mov bx, 5
+div bx
+hlt
+code ends
+end start
