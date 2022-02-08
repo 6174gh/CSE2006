@@ -1,9 +1,9 @@
 code segment
 assume cs:code
 start:
-mov ax, 04h
-mov bx, 02h
-div bx
+mov al, 04h
+mov bl, 02h
+div bl
 hlt
 code ends
 end start

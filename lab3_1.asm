@@ -1,6 +1,6 @@
 data segment 
-array1 DW 0003h, 0024h, 0050h
-array2 DW 0005h, 0012h, 0030h
+array1 DW 0005h, 0024h, 0050h
+array2 DW 0003h, 0012h, 0030h
 resarr DW 3 DUP(0)
 data ends
 
@@ -19,7 +19,7 @@ loop1:
 mov ax,[si]
 mov dx,[di]
 
-add ax,dx
+sub ax,dx
 
 mov [bx],ax
 mov ax, 00h
