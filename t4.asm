@@ -1,39 +1,32 @@
-ASSUME CS: CODE, ds:data
-data segment
-org 2000h
-arr dw 0738h, 1253h, 5674h, 9273h, 0AB3h, 58C4h, 8EFAh, 32CEh, 18CDh, 842Ah, 1357h, 0877h, 20E4h, 1687h, 573Ah
-org 4000h
-count dw ?
-data ends
+ASSUME CS: CODE, DS:DATA
+DATA SEGMENT
+	ORG 2000H
+	ARR DW 0738H, 1253H, 5674H, 9273H, 0AB3H, 58C4H, 8EFAH, 32CEH, 18CDH, 842AH, 1357H, 0877H, 20E4H, 1687H, 573AH
+	ORG 4000H
+	COUNT DW ?
+DATA ENDS
 
-code segment
-START:
-mov ax, data
-mov ds, ax
-mov si, offset arr
-
-mov ax, 0000h  
-mov bx, 0000h
-mov cx, 0Fh  
-
-lo:
-mov ax, [si] 
-test ax, 03h  
-jz loop1
-jmp loop2
-
-loop1:
-inc bx 
-jmp loop2
-
-loop2:
-add si, 02h  
-loop lo
-
-mov count, bx 
-
-
-hlt
-code ends
-end start
-end
+CODE SEGMENT
+	START:
+	MOV AX, DATA
+	MOV DS, AX
+	MOV SI, OFFSET ARR
+	MOV AX, 0000H  
+	MOV BX, 0000H
+	MOV CX, 0FH  
+	LO:
+		MOV AX, [SI] 
+		TEST AX, 03H  
+		JZ LOOP1
+		JMP LOOP2
+		LOOP1:
+		INC BX 
+		JMP LOOP2
+		LOOP2:
+		ADD SI, 02H  
+	LOOP LO
+	MOV COUNT, BX 
+	HLT
+CODE ENDS
+	END START
+END

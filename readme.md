@@ -31,7 +31,7 @@ lab6_2.asm | Packed BCD to Hex
 ## Index - Other files
 File name | Content
 --- | ---
-t1.asm |
-t2.asm |
-t3.asm |
-t4.asm |
+t1.asm | Swap the last element of an array with the first element and so on
+t2.asm | Average of the square of each element
+t3.asm | Add all the even numbers in an array
+t4.asm | Number of elements that are divisible by 4 
